@@ -1,0 +1,23 @@
+{
+  "key": "group_cb_podcasts",
+  "title": "CB Podcasts",
+  "fields": [
+    {
+      "key": "field_cb_podcasts_title",
+      "label": "CB Podcasts",
+      "name": "title",
+      "type": "message"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/cb-podcasts"
+      }
+    ]
+  ],
+  "active": 1,
+  "description": ""
+}
