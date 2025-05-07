@@ -38,6 +38,7 @@ function cb_register_post_types() {
 		'supports'           => array( 'title', 'editor' ),
 		'capability_type'    => 'post',
 		'map_meta_cap'       => true,
+		'rewrite'      => array( 'slug' => 'user_feedback' ),
 	) );
 	
 }
