@@ -22014,7 +22014,10 @@ header .dropdown.current-menu-item > .nav-link::before {
   color: var(--col-dark);
   display: flex;
   row-gap: 0.5rem;
-  padding: 2rem 1rem;
+  padding: 2rem 4rem;
+  width: -moz-max-content;
+  width: max-content;
+  margin-inline: auto;
   flex-direction: column;
   justify-content: center;
 }
