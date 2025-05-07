@@ -30,15 +30,16 @@ function cb_register_post_types() {
 			'not_found'          => 'No feedback found',
 			'not_found_in_trash' => 'No feedback in trash',
 		),
-		'public'             => false,
-		'show_ui'            => true,
-		'show_in_menu'       => true, // Ensure it shows in the admin menu
-		'menu_position'      => 25,
-		'menu_icon'          => 'dashicons-feedback',
-		'supports'           => array( 'title', 'editor' ),
-		'capability_type'    => 'post',
-		'map_meta_cap'       => true,
-		'rewrite'      => array( 'slug' => 'user_feedback' ),
+		'has_archive' 	  => true,
+		'public'          => false,
+		'show_ui'         => true,
+		'show_in_menu'    => true, // Ensure it shows in the admin menu
+		'menu_position'   => 25,
+		'menu_icon'       => 'dashicons-feedback',
+		'supports'        => array( 'title', 'editor' ),
+		'capability_type' => 'post',
+		'map_meta_cap'    => true,
+		'rewrite'         => array( 'slug' => 'user_feedback' ),
 	) );
 	
 }
