@@ -4,7 +4,7 @@
     .acf-field {
         display: flex;
         flex-wrap: wrap;
-        border: none;
+        border: none !important;
     }
     .acf-label {
         min-width: 120px;

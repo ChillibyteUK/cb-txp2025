@@ -22020,7 +22020,7 @@ header .dropdown.current-menu-item > .nav-link::before {
 .feedback .acf-field {
   display: flex;
   flex-wrap: wrap;
-  border: none;
+  border: none !important;
 }
 .feedback .acf-label {
   min-width: 120px;
