@@ -6,7 +6,7 @@
  */
 
 $gallery_id = get_field( 'gallery_id', 'option' );
-$mode       = get_field( 'display' ) || 'Upload';
+$mode       = get_field( 'display' ) ?? 'Upload';
 ?>
 <div class="container py-5">
     <h2 class="text-center">Gallery</h2>
