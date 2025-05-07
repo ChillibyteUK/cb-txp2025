@@ -13,7 +13,7 @@ if ( ! is_user_logged_in() ) {
 get_header();
 ?>
 
-<main class="feedback-archive container py-5">
+<main class="feedback-archive container py-5 mt-5">
 	<h1>User Feedback</h1>
 
 	<?php
@@ -27,14 +27,18 @@ get_header();
 
 	<?php if ( $feedback_query->have_posts() ) { ?>
 		<dl class="feedback-list">
-			<?php while ( $feedback_query->have_posts() ) {
-				$feedback_query->the_post(); ?>
+			<?php
+            while ( $feedback_query->have_posts() ) {
+				$feedback_query->the_post();
+                ?>
 				<dt class="feedback-list__item"><?= get_the_title(); ?></dt>
 				<dd>
 					<strong><?= get_field( 'name' ); ?></strong><br>
 					<?= nl2br( esc_html( get_field( 'message' ) ) ); ?>
 				</dd>
-			<?php } ?>
+			    <?php
+            }
+            ?>
 		</dl>
 	<?php } else { ?>
 		<p>No feedback submitted yet.</p>
