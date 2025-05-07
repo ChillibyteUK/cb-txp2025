@@ -16,32 +16,23 @@ $gallery_id = get_field( 'gallery_id' );
         } else {
             echo '<p>No gallery found.</p>';
         }
+        if ( get_field( 'show_user_upload' ) ) {
+            ?>
+            <style>
+            .foogallery-container {
+                display: none;
+            }
+            </style>
+            <?php
+        } else {
+            ?>
+            <style>
+                .fg-feu-form {
+                    display: none;
+                }
+            </style>
+            <?php
+        }
         ?>
     </div>
-    <?php
-    // if acf checkbox 'show_user_upload' is checked, show the upload form
-    if ( get_field( 'show_user_upload' ) ) {
-
-        wp_enqueue_script('foogallery-user-uploads');
-        if ( get_field( 'show_user_upload' ) ) {
-            add_filter('fgfu_enable_user_upload', '__return_true');
-        }
-        echo do_shortcode( '[foogallery id="' . esc_attr( $gallery_id ) . '"]' );
-        ?>
-        <div class="user-upload-form py-5 text-center">
-            <h3 class="h4">Upload Your Photos</h3>
-            <div class="fg-user-upload">
-                <?= do_shortcode( '[foogallery_upload id="' . esc_attr( $gallery_id ) . '"]' ); ?>
-            </div>
-        </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof fg_feu_init === 'function') {
-                fg_feu_init();
-            }
-        });
-        </script>
-        <?php
-    }
-    ?>
 </div>
