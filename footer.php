@@ -48,11 +48,14 @@ defined( 'ABSPATH' ) || exit;
 <div class="footer__after"></div>
 <?php wp_footer(); ?>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+setTimeout(function () {
 	if (typeof FooGallery !== 'undefined' && typeof FooGallery.ready === 'function') {
 		FooGallery.ready();
 	}
-});
+    else {
+        console.log('FooGallery is not defined or ready function is not available.');
+    }
+}, 500);
 </script>
 </body>
 
