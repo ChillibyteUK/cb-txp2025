@@ -21907,7 +21907,7 @@ header .dropdown.current-menu-item > .nav-link::before {
 }
 .latest_post_hero__image {
   width: 100%;
-  height: 700px;
+  min-height: 700px;
   position: relative;
   z-index: -1;
 }
@@ -21915,6 +21915,7 @@ header .dropdown.current-menu-item > .nav-link::before {
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 .latest_post_hero__link {
   position: absolute;

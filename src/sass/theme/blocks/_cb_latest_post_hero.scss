@@ -6,11 +6,12 @@
     isolation: isolate;
     &__image {
         width: 100%;
-        height: 700px;
+        min-height: 700px;
         position: relative;
         img {
             object-fit: cover;
             width: 100%;
+            height: 100%;
         }
         z-index: -1;
     }

@@ -23,7 +23,10 @@ $gallery_id = get_field( 'gallery_id' );
     if ( get_field( 'show_user_upload' ) ) {
 
         wp_enqueue_script('foogallery-user-uploads');
-        
+        if ( get_field( 'show_user_upload' ) ) {
+            add_filter('fgfu_enable_user_upload', '__return_true');
+        }
+        echo do_shortcode( '[foogallery id="' . esc_attr( $gallery_id ) . '"]' );
         ?>
         <div class="user-upload-form py-5 text-center">
             <h3 class="h4">Upload Your Photos</h3>
