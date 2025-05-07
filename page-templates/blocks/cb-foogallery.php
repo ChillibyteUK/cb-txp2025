@@ -21,7 +21,7 @@ $mode       = get_field( 'display' );
             ?>
             <style>
             .foogallery-container {
-                display: none;
+                display: none !important;
             }
             </style>
             <?php
@@ -29,7 +29,7 @@ $mode       = get_field( 'display' );
             ?>
             <style>
                 .fg-feu-form {
-                    display: none;
+                    display: none !important;
                 }
             </style>
             <?php
