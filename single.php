@@ -46,13 +46,13 @@ get_header();
             <div class="col-md-4">
                 <?php
                 if ( get_field( 'podcast_id' ) ) {
-                    // output a vimeo player in a bootstrap 5 16by9 container
                     $podcast_id = get_field( 'podcast_id' );
-                    $podcast_url = 'https://vimeo.com/' . esc_html( $podcast_id );
-                    $podcast_url = esc_url( $podcast_url );
                     ?>
                     <div class="ratio ratio-16x9">
-                        <iframe src="<?= esc_url( $podcast_url ); ?>" width="100%" height="400" allowfullscreen></iframe>
+                        <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
+                        title="<?= esc_html( get_the_title() ); ?>"
+                        allowfullscreen
+                        allow="autoplay; fullscreen; picture-in-picture">
                     </div>
                     <?php
                 }
