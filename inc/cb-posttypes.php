@@ -18,33 +18,22 @@
  */
 function cb_register_post_types() {
 
-	$args = array(
-		'labels'                => array(
-			'name'          => 'People',
-			'singular_name' => 'Person',
+	register_post_type( 'user_feedback', array(
+		'labels' => array(
+			'name' => 'User Feedback',
+			'singular_name' => 'Feedback',
 		),
-		'public'                => false,
-		'publicly_queryable'    => true,
-		'show_ui'               => true,
-		'show_in_rest'          => true,
-		'rest_base'             => 'people',
-		'rest_controller_class' => 'WP_REST_Posts_Controller',
-		'has_archive'           => false,
-		'show_in_menu'          => true,
-		'show_in_nav_menus'     => false,
-		'menu_icon'             => 'dashicons-groups',
-		'delete_with_user'      => false,
-		'exclude_from_search'   => true,
-		'capability_type'       => 'post',
-		'map_meta_cap'          => true,
-		'hierarchical'          => false,
-		'rewrite'               => false,
-		'query_var'             => true,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-		'show_in_graphql'       => false,
-	);
-
-    register_post_type( 'people', $args );
+		'public' => false,
+		'show_ui' => true,
+		'supports' => array( 'title', 'editor' ),
+		'capability_type' => 'post',
+		'capabilities' => array(
+			'create_posts' => 'do_not_allow',
+		),
+		'map_meta_cap' => true,
+		'menu_position' => 25,
+		'menu_icon' => 'dashicons-feedback',
+	));
 
 }
 // add_action( 'init', 'cb_register_post_types' );
