@@ -18,4 +18,15 @@ $gallery_id = get_field( 'gallery_id' );
         }
         ?>
     </div>
+    <?php
+    // if acf checkbox 'show_user_upload' is checked, show the upload form
+    if ( get_field( 'show_user_upload' ) ) {
+        ?>
+        <div class="user-upload-form">
+            <h3>Upload Your Photos</h3>
+            <?= do_shortcode( '[foogallery_upload id="' . esc_attr( $gallery_id ) . '"]' ); ?>
+        </div>
+        <?php
+    }
+    ?>
 </div>
