@@ -337,3 +337,21 @@ add_action( 'enqueue_block_assets', function () {
 		acf_form_head();
 	}
 }, 1 );
+
+add_filter( 'acf/pre_save_post', 'cb_feedback_set_title_to_zulu_timestamp', 10, 2 );
+
+function cb_feedback_set_title_to_zulu_timestamp( $post_id, $form ) {
+	// Only target feedback form submissions
+	if ( $form['post_id'] === 'new_post' && isset( $form['new_post']['post_type'] ) && $form['new_post']['post_type'] === 'user_feedback' ) {
+		// Generate UTC timestamp in Zulu format (e.g., 2025-05-07T14:23:01Z)
+		$timestamp = gmdate( 'Y-m-d\TH:i:s\Z' );
+
+		// Update the post title
+		wp_update_post( array(
+			'ID'         => $post_id,
+			'post_title' => $timestamp,
+		) );
+	}
+
+	return $post_id;
+}
