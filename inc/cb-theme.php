@@ -355,3 +355,21 @@ function cb_feedback_set_title_to_zulu_timestamp( $post_id, $form ) {
 
 	return $post_id;
 }
+
+add_action( 'admin_menu', 'cb_add_feedback_log_submenu' );
+
+function cb_add_feedback_log_submenu() {
+	add_submenu_page(
+		'edit.php?post_type=user_feedback',  // Parent slug (the CPT menu)
+		'Feedback Log',                      // Page title
+		'Feedback Log',                      // Menu label
+		'edit_posts',                        // Capability
+		'feedback-log-link',                 // Menu slug
+		'cb_feedback_log_submenu_redirect'   // Callback function
+	);
+}
+
+function cb_feedback_log_submenu_redirect() {
+	wp_redirect( home_url( '/feedback-log/' ) );
+	exit;
+}
