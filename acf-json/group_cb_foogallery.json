@@ -22,52 +22,29 @@
         },
         {
             "key": "field_68139f5721630",
-            "label": "Gallery ID",
-            "name": "gallery_id",
+            "label": "Display",
+            "name": "display",
             "aria-label": "",
-            "type": "number",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_681b4eed3e61f",
-            "label": "Show User Upload?",
-            "name": "show_user_upload",
-            "aria-label": "",
-            "type": "checkbox",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "Yes": "Yes"
+                "Gallery": "Gallery",
+                "Upload": "Upload"
             },
-            "default_value": [],
+            "default_value": "Upload",
             "return_format": "value",
-            "allow_custom": 0,
-            "allow_in_bindings": 0,
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
             "layout": "vertical",
-            "toggle": 0,
-            "save_custom": 0,
-            "custom_choice_button_text": "Add new choice"
+            "save_other_choice": 0
         }
     ],
     "location": [

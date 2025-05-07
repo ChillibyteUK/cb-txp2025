@@ -5,7 +5,8 @@
  * @package cb-txp2025
  */
 
-$gallery_id = get_field( 'gallery_id' );
+$gallery_id = get_field( 'gallery_id', 'option' );
+$mode       = get_field( 'display' );
 ?>
 <div class="container py-5">
     <h2 class="text-center">Gallery</h2>
@@ -16,7 +17,7 @@ $gallery_id = get_field( 'gallery_id' );
         } else {
             echo '<p>No gallery found.</p>';
         }
-        if ( get_field( 'show_user_upload' ) ) {
+        if ( 'Upload' === $mode ) {
             ?>
             <style>
             .foogallery-container {
