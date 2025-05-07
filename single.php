@@ -19,7 +19,7 @@ get_header();
     ?>
     <div class="container p-5 bg--white">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <h1 class="h2"><?= esc_html( get_the_title() ); ?></h1>
                 <?php
                 if ( get_field( 'post_excerpt' ) ) {
@@ -43,7 +43,7 @@ get_header();
 				echo wp_kses_post( get_the_content() );
 				?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <?php
                 if ( get_field( 'podcast_id' ) ) {
                     $podcast_id = get_field( 'podcast_id' );
