@@ -5,7 +5,7 @@
         {
             "key": "field_681b2a720baf7",
             "label": "Podcast ID",
-            "name": "",
+            "name": "podcast_id",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -42,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746610900
+    "modified": 1746611157
 }
