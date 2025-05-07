@@ -1,12 +1,15 @@
 .button {
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 0.6rem;
+    border: none;
+
 }
 
 .feedback {
     .button {
         background-color: var(--col-light);
         color: var(--col-dark);
+        font-weight: var(--fw-600);
         transition: background-color var(--transition);
         &:hover {
             background-color: var(--col-grey-200);

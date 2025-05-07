@@ -17,4 +17,7 @@
         @extend .form-control;
         width:fit-content;
     }
+    .acf-form-submit {
+        text-align: end;
+    }
 }
