@@ -1,8 +1,11 @@
 .user-upload-form {
-    .fg-feu-dropzone {
+    .fg-feu-drop-zone {
         background-color: var(--col-grey-100);
         border: 1px dashed var(--col-dark);
         color: var(--col-dark);
+        dispflay: flex;
+        flex-direction: column;
+        justify-content: center;
 
         input {
             display: none;
