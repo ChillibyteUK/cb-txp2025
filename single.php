@@ -12,24 +12,23 @@ get_header();
     <div class="blog_hero">
         <div class="container">
         <?php
-                if ( get_field( 'podcast_id' ) ) {
-                    $podcast_id = get_field( 'podcast_id' );
-                    ?>
-                    <div class="ratio ratio-16x9">
-                        <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
-                        title="<?= esc_attr( get_the_title() ); ?>"
-                        allowfullscreen
-                        allow="autoplay; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                    <?php
-                }
-                else {
-                    echo '<!-- NO PODCAST ID FOUND -->';
-                    echo get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'blog_hero__image' ) );
-                }
+            if ( get_field( 'podcast_id' ) ) {
+                $podcast_id = get_field( 'podcast_id' );
                 ?>
+                <div class="ratio ratio-16x9">
+                    <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
+                    title="<?= esc_attr( get_the_title() ); ?>"
+                    allowfullscreen
+                    allow="autoplay; fullscreen; picture-in-picture"></iframe>
+                </div>
+                <?php
+            }
+            else {
+                echo '<!-- NO PODCAST ID FOUND -->';
+                echo get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'blog_hero__image' ) );
+            }
+            ?>
         </div>
-        <?= get_the_post_thumbnail( get_the_ID(), 'full' ); ?>
     </div>
     <?php
         if ( function_exists( 'yoast_breadcrumb' ) ) {
