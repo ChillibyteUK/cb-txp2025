@@ -47,6 +47,13 @@ defined( 'ABSPATH' ) || exit;
 </footer>
 <div class="footer__after"></div>
 <?php wp_footer(); ?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	if (typeof FooGallery !== 'undefined' && typeof FooGallery.ready === 'function') {
+		FooGallery.ready();
+	}
+});
+</script>
 </body>
 
 </html>
