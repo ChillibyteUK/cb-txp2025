@@ -50,9 +50,9 @@ get_header();
                     ?>
                     <div class="ratio ratio-16x9">
                         <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
-                        title="<?= esc_html( get_the_title() ); ?>"
+                        title="<?= esc_attr( get_the_title() ); ?>"
                         allowfullscreen
-                        allow="autoplay; fullscreen; picture-in-picture">
+                        allow="autoplay; fullscreen; picture-in-picture"></iframe>
                     </div>
                     <?php
                 }
