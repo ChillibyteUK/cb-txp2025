@@ -2,17 +2,17 @@
     padding: 0.5rem 1.5rem;
     border-radius: 0.6rem;
     border: none;
-
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
 }
 
 .feedback {
     .button {
         background-color: var(--col-light);
         color: var(--col-dark);
-        font-weight: var(--fw-600);
         transition: background-color var(--transition);
         &:hover {
-            background-color: var(--col-grey-200);
+            background-color: var(--col-grey-600);
             color: var(--col-dark);
         }
     }
