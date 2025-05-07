@@ -32,7 +32,7 @@
                         );
                     } else {
                         ?>
-                        <p class="success-message">Thanks for your feedback!</p>
+                        <p class="success-message text-white">Thanks for your feedback!</p>
                         <?php
                     }
                     ?>
