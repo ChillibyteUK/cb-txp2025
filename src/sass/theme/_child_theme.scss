@@ -71,12 +71,15 @@ body {
 
     .page_hero {
         max-height: 70vh;
+        height: 70vh;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
         img {
+            height: auto;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 40%;
         }
     }
 }
