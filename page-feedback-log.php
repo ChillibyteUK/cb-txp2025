@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: User Feedback Archive
+ * Template Name: User Feedback Archive
  *
  * @package cb-txp2025
  */
