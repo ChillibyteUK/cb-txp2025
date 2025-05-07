@@ -359,17 +359,27 @@ function cb_feedback_set_title_to_zulu_timestamp( $post_id, $form ) {
 add_action( 'admin_menu', 'cb_add_feedback_log_submenu' );
 
 function cb_add_feedback_log_submenu() {
-	add_submenu_page(
-		'edit.php?post_type=user_feedback',  // Parent slug (the CPT menu)
-		'Feedback Log',                      // Page title
-		'Feedback Log',                      // Menu label
-		'edit_posts',                        // Capability
-		'feedback-log-link',                 // Menu slug
-		'cb_feedback_log_submenu_redirect'   // Callback function
-	);
+    add_submenu_page(
+        'edit.php?post_type=user_feedback',
+        'Feedback Log',
+        'Feedback Log',
+        'edit_posts',
+        'feedback-log-link',
+        'cb_feedback_log_submenu_redirect'
+    );
 }
 
 function cb_feedback_log_submenu_redirect() {
-	wp_redirect( home_url( '/feedback-log/' ) );
-	exit;
+	// Do nothing here; the actual redirect will happen below
+}
+add_action( 'load-edit.php', 'cb_maybe_redirect_feedback_log_page' );
+
+function cb_maybe_redirect_feedback_log_page() {
+	if ( isset( $_GET['post_type'], $_GET['page'] )
+		&& $_GET['post_type'] === 'user_feedback'
+		&& $_GET['page'] === 'feedback-log-link'
+	) {
+		wp_redirect( home_url( '/feedback-log/' ) );
+		exit;
+	}
 }
