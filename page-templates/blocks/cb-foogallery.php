@@ -17,6 +17,9 @@ $mode       = get_field( 'display' ) ?? 'Upload';
         } else {
             echo '<p>No gallery found.</p>';
         }
+
+        echo '<h1>' . esc_html( $mode ) . '</h1>';
+        
         if ( 'Upload' === $mode ) {
             ?>
             <style>
