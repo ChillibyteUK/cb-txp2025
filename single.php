@@ -59,8 +59,8 @@ get_header();
         </div>
         <?php
         echo wp_kses_post( get_the_content() );
+        get_template_part( './page-templates/blocks/cb-foogallery' );
         ?>
-        <?= do_shortcode( '[foogallery_upload id="' . esc_attr( 72 ) . '"]' ); ?>
     </div>
     <?php
     get_template_part( './page-templates/blocks/cb-contact' );
