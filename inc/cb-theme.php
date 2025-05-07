@@ -331,3 +331,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length' );
 // add_filter('wp_nav_menu_items', 'add_custom_menu_item', 10, 2);
 // phpcs:enable
 
+
+add_action( 'enqueue_block_assets', function () {
+	if ( has_block( 'acf/cb-feedback-form' ) ) {
+		acf_form_head();
+	}
+}, 1 );
