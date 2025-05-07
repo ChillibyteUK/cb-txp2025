@@ -31,7 +31,7 @@
                         );
                     } else {
                         ?>
-                        <p class="success-message text-white">Thanks for your feedback!</p>
+                        <p class="success-message">Thanks for your feedback!</p>
                         <?php
                     }
                     ?>
@@ -65,7 +65,7 @@ add_action(
 			})
 			.then(response => response.text())
 			.then(html => {
-				form.innerHTML = '<p class="success-message">Thanks for your feedback!</p>';
+				form.innerHTML = '<p class="success-message text-white">Thanks for your feedback!</p>';
 			})
 			.catch(err => {
 				console.error(err);
