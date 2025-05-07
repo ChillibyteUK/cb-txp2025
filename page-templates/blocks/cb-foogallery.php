@@ -8,7 +8,7 @@
 $gallery_id = get_field( 'gallery_id', 'option' );
 $mode       = get_field( 'display' ) ?? 'Upload';
 ?>
-<div class="container py-5">
+<div class="container pb-5">
     <div class="gallery-container">
         <?php
         if ( $gallery_id ) {
