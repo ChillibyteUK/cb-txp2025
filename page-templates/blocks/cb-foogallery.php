@@ -24,15 +24,10 @@ $gallery_id = get_field( 'gallery_id' );
         ?>
         <div class="user-upload-form py-5 text-center">
             <h3 class="h4">Upload Your Photos</h3>
-            <?= do_shortcode( '[foogallery_upload id="' . esc_attr( $gallery_id ) . '"]' ); ?>
+            <div class="fg-user-upload">
+                <?= do_shortcode( '[foogallery_upload id="' . esc_attr( $gallery_id ) . '"]' ); ?>
+            </div>
         </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof fg_feu_init === 'function') {
-                fg_feu_init();
-            }
-        });
-        </script>
         <?php
     }
     ?>
