@@ -309,7 +309,7 @@ function cb_theme_enqueue() {
     // enqueue splide
     wp_enqueue_style('splide-stylesheet', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css', array(), null);
     wp_enqueue_script('splide-scripts', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js', array(), null, true);
-    // wp_deregister_script( 'jquery' );
+    // wp_deregister_script( 'jquery' ); // Needed for FooGallery.
 }
 add_action( 'wp_enqueue_scripts', 'cb_theme_enqueue' );
 

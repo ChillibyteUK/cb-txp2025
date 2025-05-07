@@ -22084,8 +22084,8 @@ body {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
+  -o-object-position: center 40%;
+  object-position: center 40%;
 }
 
 /*

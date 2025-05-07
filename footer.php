@@ -47,16 +47,6 @@ defined( 'ABSPATH' ) || exit;
 </footer>
 <div class="footer__after"></div>
 <?php wp_footer(); ?>
-<script>
-setTimeout(function () {
-	if (typeof FooGallery !== 'undefined' && typeof FooGallery.ready === 'function') {
-		FooGallery.ready();
-	}
-    else {
-        console.log('FooGallery is not defined or ready function is not available.');
-    }
-}, 500);
-</script>
 </body>
 
 </html>
