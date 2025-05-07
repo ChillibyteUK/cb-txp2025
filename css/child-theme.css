@@ -22008,23 +22008,6 @@ header .dropdown.current-menu-item > .nav-link::before {
   object-fit: cover;
 }
 
-.user-upload-form .fg-feu-drop-zone {
-  background-color: var(--col-grey-100);
-  border: 1px dashed var(--col-dark);
-  color: var(--col-dark);
-  display: flex;
-  row-gap: 0.5rem;
-  padding: 2rem 4rem;
-  width: -moz-max-content;
-  width: max-content;
-  margin-inline: auto;
-  flex-direction: column;
-  justify-content: center;
-}
-.user-upload-form .fg-feu-drop-zone input {
-  display: none;
-}
-
 body {
   background-color: #fff;
 }
