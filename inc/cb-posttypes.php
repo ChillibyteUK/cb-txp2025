@@ -20,20 +20,25 @@ function cb_register_post_types() {
 
 	register_post_type( 'user_feedback', array(
 		'labels' => array(
-			'name' => 'User Feedback',
-			'singular_name' => 'Feedback',
+			'name'               => 'User Feedback',
+			'singular_name'      => 'Feedback',
+			'add_new_item'       => 'Add New Feedback',
+			'edit_item'          => 'Edit Feedback',
+			'new_item'           => 'New Feedback',
+			'view_item'          => 'View Feedback',
+			'search_items'       => 'Search Feedback',
+			'not_found'          => 'No feedback found',
+			'not_found_in_trash' => 'No feedback in trash',
 		),
-		'public' => false,
-		'show_ui' => true,
-		'supports' => array( 'title', 'editor' ),
-		'capability_type' => 'post',
-		'capabilities' => array(
-			'create_posts' => 'do_not_allow',
-		),
-		'map_meta_cap' => true,
-		'menu_position' => 25,
-		'menu_icon' => 'dashicons-feedback',
-	));
-
+		'public'             => false,
+		'show_ui'            => true,
+		'show_in_menu'       => true, // Ensure it shows in the admin menu
+		'menu_position'      => 25,
+		'menu_icon'          => 'dashicons-feedback',
+		'supports'           => array( 'title', 'editor' ),
+		'capability_type'    => 'post',
+		'map_meta_cap'       => true,
+	) );
+	
 }
 add_action( 'init', 'cb_register_post_types' );
