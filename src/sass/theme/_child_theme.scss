@@ -69,6 +69,10 @@ body {
 .blog {
     margin-top: var(--h-top);
 
+    .blog_hero {
+        background-color: var(--col-dark);
+    }
+
     .page_hero {
         max-height: 70vh;
         height: 70vh;

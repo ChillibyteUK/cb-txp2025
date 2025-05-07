@@ -22075,6 +22075,9 @@ body {
 .blog {
   margin-top: var(--h-top);
 }
+.blog .blog_hero {
+  background-color: var(--col-dark);
+}
 .blog .page_hero {
   max-height: 70vh;
   height: 70vh;
