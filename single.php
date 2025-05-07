@@ -67,6 +67,7 @@ get_header();
         ?>
     </div>
     <?php
+    get_template_part( './page-templates/blocks/cb-feedback-form' );
     get_template_part( './page-templates/blocks/cb-contact' );
     ?>
 </main>
