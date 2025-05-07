@@ -18,8 +18,9 @@
                         'post_status' => 'publish',
                     ),
                     'field_groups'    => array( 'group_681b78d60074c' ),
-                    'submit_value'    => 'Submit Feedback',
                     'updated_message' => 'Thanks for your feedback!',
+                    'submit_value'    => 'Submit Feedback',
+                    'submit_button' => '<button type="submit" class="button button--light">Submit Feedback</button>',
                 )
             );
             ?>
