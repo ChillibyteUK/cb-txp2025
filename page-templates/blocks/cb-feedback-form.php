@@ -25,7 +25,6 @@
                                 ),
                                 'field_groups'    => array( 'group_681b78d60074c' ),
                                 'form_attributes' => array( 'id' => 'acf-feedback-form' ),
-                                'updated_message' => 'Thanks for your feedback!',
                                 'submit_value'    => 'Submit Feedback',
                                 'return' => add_query_arg( 'feedback_submitted', '1', wp_get_referer() ),
                             )
