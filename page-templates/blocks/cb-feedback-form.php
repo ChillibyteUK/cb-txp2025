@@ -20,7 +20,6 @@
                     'field_groups'    => array( 'group_681b78d60074c' ),
                     'updated_message' => 'Thanks for your feedback!',
                     'submit_value'    => 'Submit Feedback',
-                    'submit_button' => '<button type="submit" class="button button--light">%s</button>',
                 )
             );
             ?>

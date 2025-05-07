@@ -1,0 +1,14 @@
+.feedback {
+    background-color: var(--col-dark);
+    .acf-field {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .acf-label {
+        min-width: 200px;
+    }
+    .acf-input-wrap > input {
+        @extend .form-control;
+        width:fit-content
+    }
+}
