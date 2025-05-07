@@ -6,6 +6,7 @@
     }
     .acf-label {
         min-width: 200px;
+        color: var(--col-light);
     }
     .acf-input-wrap > input {
         @extend .form-control;

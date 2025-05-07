@@ -22022,6 +22022,7 @@ header .dropdown.current-menu-item > .nav-link::before {
 }
 .feedback .acf-label {
   min-width: 200px;
+  color: var(--col-light);
 }
 .feedback .acf-input-wrap > input {
   width: -moz-fit-content;
