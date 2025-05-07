@@ -36,4 +36,4 @@ function cb_register_post_types() {
 	));
 
 }
-// add_action( 'init', 'cb_register_post_types' );
+add_action( 'init', 'cb_register_post_types' );
