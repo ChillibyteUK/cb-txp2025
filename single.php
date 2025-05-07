@@ -59,6 +59,10 @@ get_header();
         </div>
         <?php
         echo wp_kses_post( get_the_content() );
+        ?>
+        <h2 class="text-center">Gallery</h2>
+        <p class="text-center mb-5">We'd love to see your photos of the event. Upload them here to add to our <a href="/gallery/">event gallery</a>.</p>
+        <?php
         get_template_part( './page-templates/blocks/cb-foogallery' );
         ?>
     </div>

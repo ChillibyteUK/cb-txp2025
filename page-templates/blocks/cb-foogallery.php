@@ -9,7 +9,6 @@ $gallery_id = get_field( 'gallery_id', 'option' );
 $mode       = get_field( 'display' ) ?? 'Upload';
 ?>
 <div class="container py-5">
-    <h2 class="text-center">Gallery</h2>
     <div class="gallery-container">
         <?php
         if ( $gallery_id ) {
@@ -17,8 +16,6 @@ $mode       = get_field( 'display' ) ?? 'Upload';
         } else {
             echo '<p>No gallery found.</p>';
         }
-
-        echo '<h1>' . esc_html( $mode ) . '</h1>';
         
         if ( 'Upload' === $mode ) {
             ?>
