@@ -359,27 +359,48 @@ function cb_feedback_set_title_to_zulu_timestamp( $post_id, $form ) {
 add_action( 'admin_menu', 'cb_add_feedback_log_submenu' );
 
 function cb_add_feedback_log_submenu() {
-    add_submenu_page(
-        'edit.php?post_type=user_feedback',
-        'Feedback Log',
-        'Feedback Log',
-        'edit_posts',
-        'feedback-log-link',
-        'cb_feedback_log_submenu_redirect'
-    );
+	add_submenu_page(
+		'edit.php?post_type=user_feedback',  // Parent menu
+		'Feedback Log',                      // Page title
+		'Feedback Log',                      // Menu label
+		'edit_posts',                        // Capability
+		'feedback-log-admin',                // Menu slug
+		'cb_render_feedback_log_admin_page'  // Callback
+	);
 }
 
-function cb_feedback_log_submenu_redirect() {
-	// Do nothing here; the actual redirect will happen below
-}
-add_action( 'load-edit.php', 'cb_maybe_redirect_feedback_log_page' );
+function cb_render_feedback_log_admin_page() {
+	$args = array(
+		'post_type'      => 'user_feedback',
+		'posts_per_page' => -1,
+		'post_status'    => 'publish',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+	);
 
-function cb_maybe_redirect_feedback_log_page() {
-	if ( isset( $_GET['post_type'], $_GET['page'] )
-		&& $_GET['post_type'] === 'user_feedback'
-		&& $_GET['page'] === 'feedback-log-link'
-	) {
-		wp_redirect( home_url( '/feedback-log/' ) );
-		exit;
-	}
+	$feedback_query = new WP_Query( $args );
+	?>
+	<div class="wrap">
+		<h1>User Feedback</h1>
+
+		<?php if ( $feedback_query->have_posts() ) { ?>
+			<dl class="feedback-list">
+				<?php while ( $feedback_query->have_posts() ) {
+					$feedback_query->the_post();
+					$name    = get_field( 'name' );
+					$message = get_field( 'message' );
+					?>
+					<dt><strong><?= get_the_title(); ?></strong></dt>
+					<dd>
+						<strong><?= esc_html( $name ); ?></strong><br>
+						<?= nl2br( esc_html( $message ) ); ?>
+					</dd>
+				<?php } ?>
+			</dl>
+		<?php } else { ?>
+			<p>No feedback submitted yet.</p>
+		<?php } ?>
+	</div>
+	<?php
+	wp_reset_postdata();
 }
