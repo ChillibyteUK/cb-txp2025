@@ -19,9 +19,9 @@ $excerpt = get_the_excerpt( $latest_post_id );
 <section class="latest_post_hero">
     <div class="latest_post_hero__image">
         <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-        <div class="latest_post_hero__link">
-            <a href="<?php echo esc_url( get_permalink( $latest_post_id ) ); ?>"><i class="fa-solid fa-play"></i></a>
-        </div>
+    </div>
+    <div class="latest_post_hero__link">
+        <a href="<?php echo esc_url( get_permalink( $latest_post_id ) ); ?>"><i class="fa-solid fa-play"></i></a>
     </div>
     <div class="latest_post_hero__content">
         <div class="container">
