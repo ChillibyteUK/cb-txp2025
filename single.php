@@ -44,7 +44,19 @@ get_header();
 				?>
             </div>
             <div class="col-md-4">
-                <?= get_the_post_thumbnail( get_the_ID(), 'full' ); ?>
+                <?php
+                if ( get_field( 'podcast_id' ) ) {
+                    // output a vimeo player
+                    $podcast_id = get_field( 'podcast_id' );
+                    $podcast_url = 'https://vimeo.com/' . esc_html( $podcast_id );
+                    $podcast_url = esc_url( $podcast_url );
+                    $podcast_embed = '<iframe src="' . $podcast_url . '" width="100%" height="400" frameborder="0" allowfullscreen></iframe>';
+                    echo wp_kses_post( $podcast_embed );    
+                }
+                else {
+                    echo get_the_post_thumbnail( get_the_ID(), 'full' );
+                }
+                ?>
             </div>
         </div>
     </div>
