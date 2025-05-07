@@ -22,7 +22,7 @@ $gallery_id = get_field( 'gallery_id' );
     // if acf checkbox 'show_user_upload' is checked, show the upload form
     if ( get_field( 'show_user_upload' ) ) {
         ?>
-        <div class="user-upload-form py-5 tetx-center">
+        <div class="user-upload-form py-5 text-center">
             <h3 class="h4">Upload Your Photos</h3>
             <?= do_shortcode( '[foogallery_upload id="' . esc_attr( $gallery_id ) . '"]' ); ?>
         </div>
