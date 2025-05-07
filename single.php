@@ -54,6 +54,7 @@ get_header();
                     echo wp_kses_post( $podcast_embed );    
                 }
                 else {
+                    echo 'NO PODCAST ID FOUND';
                     echo get_the_post_thumbnail( get_the_ID(), 'full' );
                 }
                 ?>
