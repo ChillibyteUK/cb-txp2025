@@ -6,8 +6,7 @@
  */
 
 if ( ! is_user_logged_in() ) {
-	wp_redirect( wp_login_url( get_permalink() ) );
-	exit;
+	wp_die( 'You must be logged in to view this page.', 'Access Denied', array( 'response' => 403 ) );
 }
 
 get_header();
