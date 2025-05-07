@@ -4,13 +4,17 @@
     .acf-field {
         display: flex;
         flex-wrap: wrap;
+        border: none;
     }
     .acf-label {
-        min-width: 200px;
+        min-width: 120px;
         color: var(--col-light);
+    }
+    .acf-input {
+        flex: 1;
     }
     .acf-input-wrap > input {
         @extend .form-control;
-        width:fit-content
+        width:fit-content;
     }
 }

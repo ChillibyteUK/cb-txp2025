@@ -22020,10 +22020,14 @@ header .dropdown.current-menu-item > .nav-link::before {
 .feedback .acf-field {
   display: flex;
   flex-wrap: wrap;
+  border: none;
 }
 .feedback .acf-label {
-  min-width: 200px;
+  min-width: 120px;
   color: var(--col-light);
+}
+.feedback .acf-input {
+  flex: 1;
 }
 .feedback .acf-input-wrap > input {
   width: -moz-fit-content;
