@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<main id="main">
+<main id="main" class="blog">
     <?php
     the_post();
     the_content();
