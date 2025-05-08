@@ -380,27 +380,75 @@ function cb_render_feedback_log_admin_page() {
 
 	$feedback_query = new WP_Query( $args );
 	?>
-	<div class="wrap">
+    <div class="wrap">
 		<h1>User Feedback</h1>
+        <form method="post">
+            <input type="hidden" name="cb_export_feedback_csv" value="1">
+            <?php submit_button( 'Export to CSV' ); ?>
+        </form>
 
-		<?php if ( $feedback_query->have_posts() ) { ?>
-			<dl class="feedback-list">
-				<?php while ( $feedback_query->have_posts() ) {
-					$feedback_query->the_post();
-					$name    = get_field( 'name' );
-					$message = get_field( 'message' );
-					?>
-					<dt><strong><?= get_the_title(); ?></strong></dt>
-					<dd>
-						<strong><?= esc_html( $name ); ?></strong><br>
-						<?= nl2br( esc_html( $message ) ); ?>
-					</dd>
-				<?php } ?>
-			</dl>
-		<?php } else { ?>
-			<p>No feedback submitted yet.</p>
-		<?php } ?>
+        <table class="wp-list-table widefat fixed striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ( $feedback_query->have_posts() ) {
+                    while ( $feedback_query->have_posts() ) {
+                        $feedback_query->the_post();
+                        $name    = get_field( 'name' );
+                        $message = get_field( 'message' );
+                        $date    = get_the_date( 'Y-m-d H:i' );
+                        ?>
+                        <tr>
+                            <td><?= esc_html( $date ); ?></td>
+                            <td><?= esc_html( $name ); ?></td>
+                            <td><?= nl2br( esc_html( $message ) ); ?></td>
+                        </tr>
+                    <?php }
+                } else { ?>
+                    <tr><td colspan="3">No feedback found.</td></tr>
+                <?php } ?>
+            </tbody>
+        </table>
 	</div>
 	<?php
 	wp_reset_postdata();
+}
+
+
+add_action( 'admin_init', 'cb_maybe_export_feedback_csv' );
+
+function cb_maybe_export_feedback_csv() {
+	if ( is_admin() && isset( $_POST['cb_export_feedback_csv'] ) && current_user_can( 'edit_posts' ) ) {
+		header( 'Content-Type: text/csv; charset=utf-8' );
+		header( 'Content-Disposition: attachment; filename=feedback-log.csv' );
+
+		$output = fopen( 'php://output', 'w' );
+		fputcsv( $output, array( 'Date', 'Name', 'Message' ) );
+
+		$feedback_query = new WP_Query( array(
+			'post_type'      => 'user_feedback',
+			'post_status'    => 'publish',
+			'posts_per_page' => -1,
+			'orderby'        => 'date',
+			'order'          => 'DESC',
+		) );
+
+		while ( $feedback_query->have_posts() ) {
+			$feedback_query->the_post();
+			fputcsv( $output, array(
+				get_the_date( 'Y-m-d H:i' ),
+				get_field( 'name' ),
+				get_field( 'message' ),
+			) );
+		}
+
+		wp_reset_postdata();
+		fclose( $output );
+		exit;
+	}
 }
