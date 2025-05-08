@@ -21912,11 +21912,7 @@ header .dropdown.current-menu-item > .nav-link::before {
 .feedback .acf-feedback-form .acf-fields .acf-input .acf-input-wrap {
   width: 100%;
 }
-.feedback .acf-feedback-form .acf-fields .acf-input .acf-input-wrap input {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.feedback .acf-feedback-form .acf-fields .acf-form-submit {
+.feedback .acf-feedback-form .acf-form-submit {
   text-align: end;
 }
 

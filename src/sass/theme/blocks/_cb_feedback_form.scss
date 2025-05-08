@@ -20,13 +20,12 @@
                     width: 100%;
                     input {
                         @extend .form-control;
-                        width:fit-content;
                     }
                 }
             }
-            .acf-form-submit {
-                text-align: end;
-            }
+        }
+        .acf-form-submit {
+            text-align: end;
         }
     }
 }
