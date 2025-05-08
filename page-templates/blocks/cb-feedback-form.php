@@ -5,6 +5,10 @@
  * @package cb-txp2025
  */
 
+if ( ! did_action( 'acf_form_head' ) ) {
+	acf_form_head();
+}
+
 ?>
 <section class="feedback">
     <div class="container">
