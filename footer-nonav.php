@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<div class="footer__after"></div>
+<!-- <div class="footer__after"></div> -->
 <?php wp_footer(); ?>
 </body>
 
