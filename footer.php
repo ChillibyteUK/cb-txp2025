@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer template for the CB Arcus 2025 theme.
+ * Footer template for the CB TXP theme.
  *
  * This file contains the footer section of the theme, including navigation menus,
  * office addresses, and colophon information.
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
         <div class="row pb-5 g-3">
             <div class="col-sm-3">
                 <div><strong>Registered Address</strong></div>
-                <?= get_field( 'contact_address', 'option' ); ?>
+                <?= esc_html( get_field( 'contact_address', 'option' ) ); ?>
             </div>
             <div class="col-sm-3">
                 <?=

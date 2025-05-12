@@ -2,7 +2,7 @@
 /**
  * CB Theme Functions
  *
- * This file contains theme-specific functions and customizations for the CB Arcus 2025 theme.
+ * This file contains theme-specific functions and customizations for the CB TXP theme.
  *
  * @package cb-txp2025
  */

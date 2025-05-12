@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom taxonomies for the CB Arcus 2025 theme.
+ * Custom taxonomies for the CB TXP theme.
  *
  * This file defines and registers custom taxonomies such as 'Teams' and 'Offices'.
  *
