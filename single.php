@@ -10,33 +10,29 @@ get_header();
 ?>
 <main id="main" class="blog">
     <?php
-        if ( get_field( 'podcast_id' ) ) {
-            $podcast_id = get_field( 'podcast_id' );
-            ?>
-            <div class="blog_hero">
-                <div class="container">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
-                        title="<?= esc_attr( get_the_title() ); ?>"
-                        allowfullscreen
-                        allow="autoplay; fullscreen; picture-in-picture"></iframe>
-                    </div>
-                </div>
-            </div>
-            <?php
-        }
-        else {
-            ?>
-            <div class="post_hero">
-                <!-- NO PODCAST ID FOUND -->
-                <?= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'blog_hero__image' ) ); ?>
-            </div>
-            <?php
-        }
-        if ( function_exists( 'yoast_breadcrumb' ) ) {
-            yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-        }
-    ?>
+	if ( get_field( 'podcast_id' ) ) {
+		$podcast_id = get_field( 'podcast_id' );
+		?>
+	<div class="blog_hero">
+		<div class="container">
+			<div class="ratio ratio-16x9">
+				<iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . $podcast_id . '?title=0&byline=0&portrait=0' ); ?>"
+				title="<?= esc_attr( get_the_title() ); ?>"
+				allowfullscreen
+				allow="autoplay; fullscreen; picture-in-picture"></iframe>
+			</div>
+		</div>
+	</div>
+		<?php
+	} else {
+		?>
+		<div class="post_hero">
+			<!-- NO PODCAST ID FOUND -->
+			<?= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'blog_hero__image' ) ); ?>
+		</div>
+		<?php
+	}
+	?>
     <div class="container p-5 bg--white">
         <h1 class="h2"><?= esc_html( get_the_title() ); ?></h1>
         <?php
