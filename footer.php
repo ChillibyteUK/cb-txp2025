@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
         <div class="row pb-5 g-3">
             <div class="col-sm-3">
                 <div><strong>Registered Address</strong></div>
-                <?= esc_html( get_field( 'contact_address', 'option' ) ); ?>
+                <?= wp_kses_post( get_field( 'contact_address', 'option' ) ); ?>
             </div>
             <div class="col-sm-3">
                 <?=
