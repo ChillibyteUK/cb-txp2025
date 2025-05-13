@@ -54,7 +54,6 @@ get_header();
         // phpcs:enable
         ?>
         <div class="post_meta">
-            <a class="post_meta__author" href="<?= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?= get_the_author(); ?></a>
             <span class="post_meta__date"><?= esc_html( get_the_date( 'jS F Y' ) ); ?></span>
         </div>
         <?php
