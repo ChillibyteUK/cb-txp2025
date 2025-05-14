@@ -16,33 +16,36 @@ require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 
 // REMOVED AT GO LIVE.
-add_action('init', function () {
-	$request_uri = $_SERVER['REQUEST_URI'];
+add_action(
+	'init',
+	function () {
+		$request_uri = $_SERVER['REQUEST_URI'];
 
-	// Allow homepage
-	if ($request_uri === '/' || $request_uri === '') {
-		return;
+		// Allow homepage.
+		if ( $request_uri === '/' || $request_uri === '' ) {
+			return;
+		}
+
+		// Allow wp-login.php.
+		if ( strpos( $request_uri, '/wp-login.php' ) === 0 ) {
+			return;
+		}
+
+		// Allow wp-admin and its resources.
+		if ( strpos( $request_uri, '/wp-admin' ) === 0 ) {
+			return;
+		}
+
+		// Allow common asset types (CSS, JS, images, fonts, icons).
+		if ( preg_match( '/\.(css|js|png|jpe?g|gif|svg|webp|woff2?|ttf|eot|ico)$/i', $request_uri ) ) {
+			return;
+		}
+
+		// Redirect everything else to homepage.
+		wp_redirect( home_url( '/' ), 302 );
+		exit;
 	}
-
-	// Allow wp-login.php
-	if (strpos($request_uri, '/wp-login.php') === 0) {
-		return;
-	}
-
-	// Allow wp-admin and its resources
-	if (strpos($request_uri, '/wp-admin') === 0) {
-		return;
-	}
-
-	// Allow common asset types (CSS, JS, images, fonts, icons)
-	if (preg_match('/\.(css|js|png|jpe?g|gif|svg|webp|woff2?|ttf|eot|ico)$/i', $request_uri)) {
-		return;
-	}
-
-	// Redirect everything else to homepage
-	wp_redirect(home_url('/'), 302);
-	exit;
-});
+);
 
 
 
