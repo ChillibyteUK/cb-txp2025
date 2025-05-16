@@ -15,7 +15,6 @@ require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
 // require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 
-/*
 // REMOVE AT GO LIVE.
 add_action(
 	'init',
@@ -47,7 +46,6 @@ add_action(
 		exit;
 	}
 );
-*/
 
 
 // Remove unwanted SVG filter injection WP.
