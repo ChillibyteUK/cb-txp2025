@@ -21812,13 +21812,13 @@ header .dropdown.current-menu-item > .nav-link::before {
   display: grid;
   place-content: center;
 }
-.latest_post_hero__link a {
+.latest_post_hero__link span {
   color: var(--col-light);
   font-size: var(--fs-900);
   line-height: 1;
   transition: color var(--transition);
 }
-.latest_post_hero__link a:hover {
+.latest_post_hero__link span:hover {
   color: var(--col-grey-200);
 }
 .latest_post_hero__content {
