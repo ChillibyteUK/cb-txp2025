@@ -22,7 +22,7 @@ $excerpt = get_the_excerpt( $latest_post_id );
 			<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 		</div>
 		<div class="latest_post_hero__link">
-			<i class="fa-solid fa-play"></i>
+			<span><i class="fa-solid fa-play"></i></span>
 		</div>
 		<div class="latest_post_hero__content">
 			<div class="container">
