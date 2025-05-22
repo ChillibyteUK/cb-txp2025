@@ -96,7 +96,7 @@ add_action(
             },
             perMove    : 1,
             gap        : '1rem',
-            autoplay   : false,
+            autoplay   : true,
             interval   : 4000, // 4 seconds
             pagination : true,
             arrows     : false,
