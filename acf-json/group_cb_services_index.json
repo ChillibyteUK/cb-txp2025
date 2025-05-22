@@ -1,10 +1,10 @@
 {
-  "key": "group_cb_podcasts",
-  "title": "CB Podcasts",
+  "key": "group_cb_services_index",
+  "title": "CB Services Index",
   "fields": [
     {
-      "key": "field_cb_podcasts_title",
-      "label": "CB Podcasts",
+      "key": "field_cb_services_index_title",
+      "label": "CB Services Index",
       "name": "title",
       "type": "message"
     }
@@ -14,7 +14,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/cb-podcasts"
+        "value": "acf/cb-services-index"
       }
     ]
   ],

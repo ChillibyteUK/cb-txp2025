@@ -2,7 +2,7 @@
 /**
  * File responsible for registering custom ACF blocks and modifying core block arguments.
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 /**
@@ -19,79 +19,45 @@ function acf_blocks() {
 
         acf_register_block_type(
             array(
+                'name'            => 'cb_services_index',
+                'title'           => __( 'CB Services Index' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'page-templates/blocks/cb-services-index.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
+                'name'            => 'cb_work_index',
+                'title'           => __( 'CB Work Index' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'page-templates/blocks/cb-work-index.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
+        acf_register_block_type(
+            array(
                 'name'            => 'cb_video_hero',
                 'title'           => __( 'CB Video Hero' ),
                 'category'        => 'layout',
                 'icon'            => 'cover-image',
                 'render_template' => 'page-templates/blocks/cb-video-hero.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
-
-        acf_register_block_type(
-            array(
-                'name'            => 'cb_feedback_form',
-                'title'           => __( 'CB Feedback Form' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'page-templates/blocks/cb-feedback-form.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
-
-        acf_register_block_type(
-            array(
-                'name'            => 'cb_foogallery',
-                'title'           => __( 'CB FooGallery' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'page-templates/blocks/cb-foogallery.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
-
-        acf_register_block_type(
-            array(
-                'name'            => 'cb_podcasts',
-                'title'           => __( 'CB Podcasts' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'page-templates/blocks/cb-podcasts.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
-
-        acf_register_block_type(
-            array(
-                'name'            => 'cb_latest_post_hero',
-                'title'           => __( 'CB Latest Post Hero' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'page-templates/blocks/cb-latest-post-hero.php',
                 'mode'            => 'edit',
                 'supports'        => array(
                     'mode'      => false,
@@ -135,15 +101,15 @@ add_action( 'acf/init', 'acf_blocks' );
  */
 function core_block_type_args( $args, $name ) {
 
-	if ( 'core/paragraph' === $name ) {
-		$args['render_callback'] = 'modify_core_add_container';
-	}
-	if ( 'core/heading' === $name ) {
-		$args['render_callback'] = 'modify_core_add_container';
-	}
-	if ( 'core/list' === $name ) {
-		$args['render_callback'] = 'modify_core_add_container';
-	}
+	// if ( 'core/paragraph' === $name ) {
+	// 	$args['render_callback'] = 'modify_core_add_container';
+	// }
+	// if ( 'core/heading' === $name ) {
+	// 	$args['render_callback'] = 'modify_core_add_container';
+	// }
+	// if ( 'core/list' === $name ) {
+	// 	$args['render_callback'] = 'modify_core_add_container';
+	// }
 
     return $args;
 }

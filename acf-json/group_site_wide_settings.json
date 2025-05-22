@@ -22,8 +22,8 @@
         },
         {
             "key": "field_67c1ce7a0c74f",
-            "label": "Contact Address",
-            "name": "contact_address",
+            "label": "Contact Address (London)",
+            "name": "contact_address_london",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -42,9 +42,93 @@
             "new_lines": "br"
         },
         {
-            "key": "field_681b5e94ab398",
-            "label": "Gallery ID",
-            "name": "gallery_id",
+            "key": "field_682ee5b93d6e1",
+            "label": "London Map URL",
+            "name": "london_map_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_682ee5c33d6e2",
+            "label": "Contact Address (Manchester)",
+            "name": "contact_address_manchester",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_682ee5d13d6e3",
+            "label": "Manchester Map URL",
+            "name": "manchester_map_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_682ee5e33d6e4",
+            "label": "Contact Phone",
+            "name": "contact_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_682ee5ea3d6e5",
+            "label": "Contact Email",
+            "name": "contact_email",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -80,5 +164,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0
+    "show_in_rest": 0,
+    "modified": 1747904031
 }

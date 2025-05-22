@@ -4,7 +4,7 @@
  *
  * Scans compiled CSS and lists all `.button` variations in a visual format.
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

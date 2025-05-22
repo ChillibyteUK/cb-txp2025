@@ -1,37 +1,49 @@
 header {
-    background-color: var(--col-grey-100);
+    background-color: var(--col-pbh-black);
+
+    &.header-blue {
+        background-color: var(--col-pbh-blue);
+    }
+
     transition: var(--transition);
 
+    border-bottom: .375rem solid var(--col-pbh-white);
+
     a.nav-link {
-        background-color: var(--col-dark);
-        color: var(--col-light);
+        color: var(--col-pbh-white);
         padding: 0.5rem 1rem !important;
-        border-radius: 0.6rem;
         text-transform: uppercase;
-        font-size: var(--fs-300);
-        font-weight: var(--fw-500);
+        font-style: italic;
+        font-stretch: condensed;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 800;
         transition: var(--transition);
         display: inline;
         @media (min-width:992px) {
             &:hover {
-                color: var(--col-grey-400);
+                color: var(--col-pbh-pink);
             }
         }
     }
 
     .logo-container {
-        max-width: 240px;
+        width: 112px;
+        height: 80px;
         margin-right: 1rem;
+        position: relative;
     }
     .logo {
-        background-image: url(../img/txp-logo.svg);
+        position: absolute;
+        background-image: url(../img/pbh-logo.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         display: inline-block;
-        aspect-ratio: 642 / 162;
-        width: 200px;
-        max-width: 100%;
+        aspect-ratio: 1;
+        width: 112px;
+        height: 112px;
+        top: -10px;
     }
 
     &.hide {

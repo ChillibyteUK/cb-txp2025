@@ -22,15 +22,15 @@
         },
         {
             "key": "field_681c6b09f7c0b",
-            "label": "Vimeo Video ID",
-            "name": "vimeo_video_id",
+            "label": "Video URL (MP4)",
+            "name": "video_url",
             "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -40,6 +40,32 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_682c918666ab7",
+            "label": "Video Poster (JPG)",
+            "name": "video_poster",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -60,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746692883
+    "modified": 1747751629
 }

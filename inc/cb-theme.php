@@ -2,9 +2,9 @@
 /**
  * CB Theme Functions
  *
- * This file contains theme-specific functions and customizations for the CB TXP theme.
+ * This file contains theme-specific functions and customizations for the theme.
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 // Exit if accessed directly.
@@ -12,40 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
-// require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
-
-// // REMOVE AT GO LIVE.
-// add_action(
-// 	'init',
-// 	function () {
-// 		$request_uri = $_SERVER['REQUEST_URI'];
-
-// 		// Allow homepage.
-// 		if ( $request_uri === '/' || $request_uri === '' ) {
-// 			return;
-// 		}
-
-// 		// Allow wp-login.php.
-// 		if ( strpos( $request_uri, '/wp-login.php' ) === 0 ) {
-// 			return;
-// 		}
-
-// 		// Allow wp-admin and its resources.
-// 		if ( strpos( $request_uri, '/wp-admin' ) === 0 ) {
-// 			return;
-// 		}
-
-// 		// Allow common asset types (CSS, JS, images, fonts, icons).
-// 		if ( preg_match( '/\.(css|js|png|jpe?g|gif|svg|webp|woff2?|ttf|eot|ico)$/i', $request_uri ) ) {
-// 			return;
-// 		}
-
-// 		// Redirect everything else to homepage.
-// 		wp_redirect( home_url( '/' ), 302 );
-// 		exit;
-// 	}
-// );
 
 
 // Remove unwanted SVG filter injection WP.
@@ -115,8 +82,8 @@ function widgets_init() {
 
     register_nav_menus(
 		array(
-			'primary_nav'  => __( 'Primary Nav', 'cb-txp2025' ),
-			'footer_menu1' => __( 'Footer Nav', 'cb-txp2025' ),
+			'primary_nav'  => __( 'Primary Nav', 'cb-pbh2025' ),
+			'footer_menu1' => __( 'Footer Nav', 'cb-pbh2025' ),
 		)
 	);
 
@@ -133,59 +100,9 @@ function widgets_init() {
         'editor-color-palette',
         array(
             array(
-                'name'  => 'Grey 100',
-                'slug'  => 'grey-100',
-                'color' => '#949494',
-            ),
-            array(
-                'name'  => 'Grey 200',
-                'slug'  => 'grey-200',
-                'color' => '#858585',
-            ),
-            array(
-                'name'  => 'Grey 300',
-                'slug'  => 'grey-300',
-                'color' => '#757575',
-            ),
-            array(
-                'name'  => 'Grey 400',
-                'slug'  => 'grey-400',
-                'color' => '#666666',
-            ),
-            array(
-                'name'  => 'Grey 500',
-                'slug'  => 'grey-500',
-                'color' => '#565656',
-            ),
-            array(
-                'name'  => 'Grey 600',
-                'slug'  => 'grey-600',
-                'color' => '#474747',
-            ),
-            array(
-                'name'  => 'Grey 700',
-                'slug'  => 'grey-700',
-                'color' => '#383838',
-            ),
-            array(
-                'name'  => 'Grey 800',
-                'slug'  => 'grey-800',
-                'color' => '#292929',
-            ),
-            array(
-                'name'  => 'Grey 900',
-                'slug'  => 'grey-900',
-                'color' => '#1a1a1a',
-            ),
-            array(
-                'name'  => 'Dark',
-                'slug'  => 'dark',
-                'color' => '#1a1a1a',
-            ),
-            array(
-                'name'  => 'Light',
-                'slug'  => 'light',
-                'color' => '#f9f9f9',
+                'name'  => 'Black',
+                'slug'  => 'black',
+                'color' => '#000000',
             ),
             array(
                 'name'  => 'White',
@@ -193,13 +110,22 @@ function widgets_init() {
                 'color' => '#ffffff',
             ),
             array(
-                'name'  => 'Primary 400',
-                'slug'  => 'primary-400',
-                'color' => '#ff5c57', // Adjust if needed
+                'name'  => 'Yellow',
+                'slug'  => 'yellow',
+                'color' => '#f6d14b',
+            ),
+            array(
+                'name'  => 'Pink',
+                'slug'  => 'pink',
+                'color' => '#e6007e',
+            ),
+            array(
+                'name'  => 'Green',
+                'slug'  => 'green',
+                'color' => '#b9d536',
             ),
         )
     );
-    
 }
 add_action( 'widgets_init', 'widgets_init', 11 );
 
@@ -254,21 +180,6 @@ function cb_dashboard_widget_display() {
 // }
 // );
 
-// remove discussion metabox
-// function cc_gutenberg_register_files()
-// {
-//     // script file
-//     wp_register_script(
-//         'cc-block-script',
-//         get_stylesheet_directory_uri() . '/js/block-script.js', // adjust the path to the JS file
-//         array('wp-blocks', 'wp-edit-post')
-//     );
-//     // register block editor script
-//     register_block_type('cc/ma-block-files', array(
-//         'editor_script' => 'cc-block-script'
-//     ));
-// }
-// add_action('init', 'cc_gutenberg_register_files');
 // phpcs:enable
 
 /**
@@ -331,24 +242,31 @@ add_filter( 'gform_submit_button', 'wd_gf_update_submit_button', 10, 2 );
 function cb_theme_enqueue() {
     $the_theme = wp_get_theme();
 	// phpcs:disable
-    // wp_enqueue_style('lightbox-stylesheet', get_stylesheet_directory_uri() . '/css/lightbox.min.css', array(), $the_theme->get('Version'));
-    // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox-plus-jquery.min.js', array(), $the_theme->get('Version'), true);
-    // wp_enqueue_script('lightbox-scripts', get_stylesheet_directory_uri() . '/js/lightbox.min.js', array(), $the_theme->get('Version'), true);
     // wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
     // wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
     // wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.3.min.js', array(), null, true);
+    // wp_enqueue_style( 'lightbox-stylesheet', 'https://cdn.jsdelivr.net/npm/lightbox2@2.11.5/dist/css/lightbox.min.css', array(), null );
+    // wp_enqueue_script( 'lightbox-scripts', 'https://cdn.jsdelivr.net/npm/lightbox2@2.11.5/dist/js/lightbox.min.js', array(), null, true );
     // wp_enqueue_script('parallax', get_stylesheet_directory_uri() . '/js/parallax.min.js', array('jquery'), null, true);
-	// phpcs:enable
-    // enqueue splide
-    wp_enqueue_style('splide-stylesheet', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css', array(), null);
-    wp_enqueue_script('splide-scripts', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js', array(), null, true);
+    // wp_enqueue_style( 'splide-stylesheet', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), null );
+    // wp_enqueue_script( 'splide-scripts', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true );
     // wp_deregister_script( 'jquery' ); // Needed for FooGallery.
+	// phpcs:enable
+	wp_enqueue_style( 'glide-core', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css', array(), null );
+	wp_enqueue_script( 'glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js', array(), null, true );
+	wp_enqueue_style( 'glightbox-css', 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css', array(), null );
+    wp_enqueue_script( 'glightbox-js', 'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', array(), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'cb_theme_enqueue' );
 
 
-function custom_excerpt_length( $length ) {
-	return 15; // Set to your desired number of words
+/**
+ * Filters the excerpt length.
+ *
+ * @return int The desired number of words for the excerpt.
+ */
+function custom_excerpt_length() {
+    return 15; // Set to your desired number of words.
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
@@ -365,123 +283,55 @@ add_filter( 'excerpt_length', 'custom_excerpt_length' );
 // phpcs:enable
 
 
-add_action( 'enqueue_block_assets', function () {
-	if ( has_block( 'acf/cb-feedback-form' ) ) {
-		acf_form_head();
-	}
-}, 1 );
+add_action( 'wp_ajax_cb_load_more_work', 'cb_load_more_work' );
+add_action( 'wp_ajax_nopriv_cb_load_more_work', 'cb_load_more_work' );
 
-add_filter( 'acf/pre_save_post', 'cb_feedback_set_title_to_zulu_timestamp', 10, 2 );
+/**
+ * Handles AJAX requests to load more "work" posts.
+ *
+ * This function retrieves and outputs additional "work" posts
+ * when the "Load More" button is clicked on the frontend.
+ */
+function cb_load_more_work() {
+	// phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$paged = isset( $_POST['page'] ) ? (int) $_POST['page'] + 1 : 2;
 
-function cb_feedback_set_title_to_zulu_timestamp( $post_id, $form ) {
-	// Only target feedback form submissions
-	if ( $form['post_id'] === 'new_post' && isset( $form['new_post']['post_type'] ) && $form['new_post']['post_type'] === 'user_feedback' ) {
-		// Generate UTC timestamp in Zulu format (e.g., 2025-05-07T14:23:01Z)
-		$timestamp = gmdate( 'Y-m-d\TH:i:s\Z' );
-
-		// Update the post title
-		wp_update_post( array(
-			'ID'         => $post_id,
-			'post_title' => $timestamp,
-		) );
-	}
-
-	return $post_id;
-}
-
-add_action( 'admin_menu', 'cb_add_feedback_log_submenu' );
-
-function cb_add_feedback_log_submenu() {
-	add_submenu_page(
-		'edit.php?post_type=user_feedback',  // Parent menu
-		'Feedback Log',                      // Page title
-		'Feedback Log',                      // Menu label
-		'edit_posts',                        // Capability
-		'feedback-log-admin',                // Menu slug
-		'cb_render_feedback_log_admin_page'  // Callback
-	);
-}
-
-function cb_render_feedback_log_admin_page() {
-	$args = array(
-		'post_type'      => 'user_feedback',
-		'posts_per_page' => -1,
-		'post_status'    => 'publish',
-		'orderby'        => 'date',
-		'order'          => 'DESC',
-	);
-
-	$feedback_query = new WP_Query( $args );
-	?>
-    <div class="wrap">
-		<h1>User Feedback</h1>
-        <form method="post">
-            <input type="hidden" name="cb_export_feedback_csv" value="1">
-            <?php submit_button( 'Export to CSV' ); ?>
-        </form>
-
-        <table class="wp-list-table widefat fixed striped">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Message</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if ( $feedback_query->have_posts() ) {
-                    while ( $feedback_query->have_posts() ) {
-                        $feedback_query->the_post();
-                        $name    = get_field( 'name' );
-                        $message = get_field( 'message' );
-                        $date    = get_the_date( 'Y-m-d H:i' );
-                        ?>
-                        <tr>
-                            <td><?= esc_html( $date ); ?></td>
-                            <td><?= esc_html( $name ); ?></td>
-                            <td><?= nl2br( esc_html( $message ) ); ?></td>
-                        </tr>
-                    <?php }
-                } else { ?>
-                    <tr><td colspan="3">No feedback found.</td></tr>
-                <?php } ?>
-            </tbody>
-        </table>
-	</div>
-	<?php
-	wp_reset_postdata();
-}
-
-
-add_action( 'admin_init', 'cb_maybe_export_feedback_csv' );
-
-function cb_maybe_export_feedback_csv() {
-	if ( is_admin() && isset( $_POST['cb_export_feedback_csv'] ) && current_user_can( 'edit_posts' ) ) {
-		header( 'Content-Type: text/csv; charset=utf-8' );
-		header( 'Content-Disposition: attachment; filename=feedback-log.csv' );
-
-		$output = fopen( 'php://output', 'w' );
-		fputcsv( $output, array( 'Date', 'Name', 'Message' ) );
-
-		$feedback_query = new WP_Query( array(
-			'post_type'      => 'user_feedback',
-			'post_status'    => 'publish',
-			'posts_per_page' => -1,
+	$query = new WP_Query(
+		array(
+			'post_type'      => 'work',
+			'posts_per_page' => 9,
+			'paged'          => $paged,
 			'orderby'        => 'date',
-			'order'          => 'DESC',
-		) );
+			'order'          => 'ASC',
+		)
+	);
 
-		while ( $feedback_query->have_posts() ) {
-			$feedback_query->the_post();
-			fputcsv( $output, array(
-				get_the_date( 'Y-m-d H:i' ),
-				get_field( 'name' ),
-				get_field( 'message' ),
-			) );
+	$response = array(
+		'html'          => '',
+		'max_num_pages' => $query->max_num_pages,
+		'current_page'  => $paged,
+	);
+
+	if ( $query->have_posts() ) {
+		ob_start();
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$logo = get_field( 'logo', get_the_ID() );
+			?>
+			<div class="work-item col-12 col-md-6 col-lg-4">
+				<a href="<?= esc_url( get_permalink() ); ?>" class="work-item__link">
+					<?= get_the_post_thumbnail( get_the_ID(), 'full', array( 'class' => 'work-item__image' ) ); ?>
+					<div class="work-item__overlay">
+						<?= wp_get_attachment_image( $logo, 'full', false, array( 'class' => 'work-item__logo' ) ); ?>
+						<h2 class="work-item__title"><?= esc_html( get_the_title() ); ?></h2>
+					</div>
+				</a>
+			</div>
+			<?php
 		}
-
 		wp_reset_postdata();
-		fclose( $output );
-		exit;
+		$response['html'] = ob_get_clean();
 	}
+
+	wp_send_json( $response );
 }

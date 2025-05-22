@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 // Exit if accessed directly.
@@ -23,7 +23,19 @@ if ( session_status() === PHP_SESSION_NONE ) {
         charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
     <link rel="preload"
-        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/aeonikfonovf.woff2' ); ?>"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/futura-medium.woff2' ); ?>"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/futura-bold.woff2' ); ?>"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/futura-bold-oblique.woff2' ); ?>"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/futura-extra-bold-condensed.woff2' ); ?>"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload"
+        href="<?= esc_url( get_stylesheet_directory_uri() . '/fonts/futura-extra-bold-condensed-oblique.woff2' ); ?>"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
     if ( ! is_user_logged_in() ) {
@@ -97,10 +109,14 @@ if ( session_status() === PHP_SESSION_NONE ) {
     		<?php
     	}
 	}
+
+
+	$header_class = get_query_var( 'header_class', '' ) ?? null;
+
 	?>
-<header id="wrapper-navbar" class="fixed-top p-0">
+<header id="wrapper-navbar" class="fixed-top p-0 <?= esc_attr( $header_class ); ?>">
     <nav class="navbar navbar-expand-lg p-0">
-        <div class="container py-3 nav-top align-items-center">
+        <div class="container nav-top align-items-center">
             <div class="text-lg-center logo-container"><a href="/" class="logo" aria-label="TxP Homepage"></a></div>
             <div class="button-container d-lg-none">
                 <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
@@ -113,18 +129,17 @@ if ( session_status() === PHP_SESSION_NONE ) {
             <div class="collapse navbar-collapse" id="navbar">
                     <?php
                     wp_nav_menu(
-    array(
-        'theme_location'  => 'primary_nav',
-        'container_class' => 'w-100',
-        // 'container_id'    => 'primaryNav',
-        'menu_class'      => 'navbar-nav justify-content-end gap-2 w-100',
-        'fallback_cb'     => '',
-        'menu_id'         => 'navbarr',
-        'depth'           => 3,
-        'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-    )
-);
-?>
+    					array(
+							'theme_location'  => 'primary_nav',
+							'container_class' => 'w-100',
+							'menu_class'      => 'navbar-nav justify-content-end gap-2 w-100',
+							'fallback_cb'     => '',
+							'menu_id'         => 'navbarr',
+							'depth'           => 3,
+							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+						)
+					);
+					?>
             </div>
         </div>
     </nav>

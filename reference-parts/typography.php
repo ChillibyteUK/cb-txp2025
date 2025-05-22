@@ -2,7 +2,7 @@
 /**
  * Theme typography reference output from _props.scss
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

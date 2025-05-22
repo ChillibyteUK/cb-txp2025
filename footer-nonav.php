@@ -5,7 +5,7 @@
  * This file contains the footer section of the theme, including navigation menus,
  * office addresses, and colophon information.
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 defined( 'ABSPATH' ) || exit;

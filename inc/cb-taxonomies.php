@@ -4,7 +4,7 @@
  *
  * This file defines and registers custom taxonomies such as 'Teams' and 'Offices'.
  *
- * @package cb-txp2025
+ * @package cb-pbh2025
  */
 
 use function Avifinfo\read;

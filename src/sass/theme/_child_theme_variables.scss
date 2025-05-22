@@ -40,3 +40,15 @@ $container-max-widths: (
 
 $accordion-border-radius: 0;
 $accordion-inner-border-radius: 0;
+
+
+// ==== Font Size Utilities ====
+@function fluid-size($min-size, $max-size) {
+    $min-vw: 320;
+    $max-vw: 1440;
+    $slope: ($max-size - $min-size) / ($max-vw - $min-vw);
+    $intercept: $min-size - $slope * $min-vw;
+  
+    @return clamp(#{$min-size}px, #{$intercept}px + #{$slope * 100}vw, #{$max-size}px);
+}
+  
