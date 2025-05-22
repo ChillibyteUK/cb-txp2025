@@ -2,7 +2,7 @@
 /**
  * Theme colour reference output from _props.scss
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

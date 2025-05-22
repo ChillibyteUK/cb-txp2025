@@ -1,10 +1,10 @@
 {
-  "key": "group_cb_work_index",
-  "title": "CB Work Index",
+  "key": "group_cb_feedback_form",
+  "title": "CB Feedback Form",
   "fields": [
     {
-      "key": "field_cb_work_index_title",
-      "label": "CB Work Index",
+      "key": "field_cb_feedback_form_title",
+      "label": "CB Feedback Form",
       "name": "title",
       "type": "message"
     }
@@ -14,7 +14,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/cb-work-index"
+        "value": "acf/cb-feedback-form"
       }
     ]
   ],

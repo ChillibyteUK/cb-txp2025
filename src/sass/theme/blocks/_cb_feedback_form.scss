@@ -1,0 +1,31 @@
+.feedback {
+    background-color: var(--col-dark);
+    padding-block: 8rem;
+
+    .acf-feedback-form {
+        .acf-fields {
+            .acf-field {
+                display: flex;
+                flex-wrap: wrap;
+                border: none !important;
+                padding-inline: 0 !important;
+            }
+            .acf-label {
+                min-width: 120px;
+                color: var(--col-light);
+            }
+            .acf-input {
+                flex: 1 1 auto;
+                .acf-input-wrap {
+                    width: 100%;
+                    input {
+                        @extend .form-control;
+                    }
+                }
+            }
+        }
+        .acf-form-submit {
+            text-align: end;
+        }
+    }
+}

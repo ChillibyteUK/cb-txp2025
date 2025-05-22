@@ -4,7 +4,7 @@
  *
  * This template is used to display the CSS properties defined in the SASS file.
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 if ( ! function_exists( 'wp_kses_post' ) ) {

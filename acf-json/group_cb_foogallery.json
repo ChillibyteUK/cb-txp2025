@@ -1,10 +1,10 @@
 {
-    "key": "group_cb_video_hero",
-    "title": "CB Video Hero",
+    "key": "group_cb_foogallery",
+    "title": "CB FooGallery",
     "fields": [
         {
-            "key": "field_cb_video_hero_title",
-            "label": "CB Video Hero",
+            "key": "field_cb_foogallery_title",
+            "label": "CB FooGallery",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,11 +21,11 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_681c6b09f7c0b",
-            "label": "Vimeo Video ID",
-            "name": "vimeo_video_id",
+            "key": "field_68139f5721630",
+            "label": "Display",
+            "name": "display",
             "aria-label": "",
-            "type": "text",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,12 +34,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "choices": {
+                "Gallery": "Gallery",
+                "Upload": "Upload"
+            },
+            "default_value": "Upload",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -47,7 +52,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-video-hero"
+                "value": "acf\/cb-foogallery"
             }
         ]
     ],
@@ -59,6 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1746692883
+    "show_in_rest": 0
 }

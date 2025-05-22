@@ -1,48 +1,10 @@
 @font-face {
-	font-family: 'Futura';
-	src: url('../fonts/futura-medium.woff2') format('woff2');
-	font-weight: 500;
+	font-family: 'Aeonik Fono VF';
+	src: url('../fonts/aeonikfonovf.woff2') format('woff2');
+	font-weight: 100 900; /* full range */
 	font-style: normal;
-	font-stretch: normal;
 	font-display: swap;
 }
-
-@font-face {
-	font-family: 'Futura';
-	src: url('../fonts/futura-bold.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Futura';
-	src: url('../fonts/futura-bold-oblique.woff2') format('woff2');
-	font-weight: 700;
-	font-style: oblique;
-	font-stretch: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Futura';
-	src: url('../fonts/futura-extra-bold-condensed.woff2') format('woff2');
-	font-weight: 800;
-	font-style: normal;
-	font-stretch: condensed;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Futura';
-	src: url('../fonts/futura-extra-bold-condensed-oblique.woff2') format('woff2');
-	font-weight: 800;
-	font-style: oblique;
-	font-stretch: condensed;
-	font-display: swap;
-}
-
 
 :root {
     font-variant-ligatures: none;
@@ -52,90 +14,67 @@ html {
     font-size: 16px;
 }
 
-// ==== Body ====
 body {
-  font-family: 'Futura', sans-serif;
-  font-size: fluid-size(18, 24);
-  font-weight: 500;
-  line-height: 1.75;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: var(--ff-body);
+    font-weight: var(--fw-400);
+    font-size: 1rem;
+    line-height: 1.556;
+    font-style: normal;
+    color: var(--col-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-// ==== Large Text ====
-.fs-lg {
-  font-size: fluid-size(24, 30);
-  font-weight: 500;
-  line-height: 1.6;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-500);
+    line-height: 1.1;
+    text-wrap: balance;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
 }
 
-.text-lead {
-    font-weight: 800;
-    font-size: 1.5rem;
-    line-height: 1.25rem;
-    font-stretch: condensed;
-    @media (min-width:768px) {
-        font-size: 2.25rem;
-        line-height: 2.5;
-    }
-    @media (min-width:1024px) {
-        font-size: 3rem;
-        line-height: 1;
-    }
+h1,
+.h1 {
+    font-size: var(--fs-900);
+}
+h2,
+.h2 {
+    font-size: var(--fs-800);
+}
+h3,
+.h3 {
+    font-size: var(--fs-700);
+}
+h4,
+.h4 {
+    font-size: var(--fs-600);
+}
+h5,
+.h5 {
+    font-size: var(--fs-550);
 }
 
-.text-headline-md {
-    font-style: italic;
-    font-weight: 800;
-    font-size: 1.875rem;
-    line-height: 2.25;
-    font-stretch: condensed;
-    @media (min-width:768px) {
-        font-size: 2.25rem;
-        line-height: 2.5;
-    }
-    @media (min-width:1024px) {
-        font-size: 3rem;
-        line-height: 1;
-    }
+.fw-400 {
+    font-weight: var(--fw-400);
 }
-
-.text-headline-lg {
-    font-style: italic;
-    font-weight: 800;
-    font-size: 2.25rem;
-    line-height: 2.5;
-    font-stretch: condensed;
-    @media (min-width:768px) {
-        font-size: 3.75rem;
-        line-height: 1;
-    }
-    @media (min-width:1024px) {
-        font-size: 4.5rem;
-        line-height: 1;
-    }
-}
-
-.text-headline-xl {
-    font-style: italic;
-    font-weight: 800;
-    font-size: 3rem;
-    line-height: .925;
-    font-stretch: condensed;
-    @media (min-width:768px) {
-        font-size: 4.5rem;
-    }
-    @media (min-width:1024px) {
-        font-size: 6rem;
-    }
-}
-
-
 strong,
 .fw-bold,
 .fw-700 {
     font-weight: var(--fw-700);
+}
+.fs-500,
+.has-medium-font-size {
+    font-size: var(--fs-500);
+}
+.fs-300,
+.has-small-font-size {
+    font-size: var(--fs-300);
 }
 
 .text-balance {

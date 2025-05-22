@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 // Exit if accessed directly.

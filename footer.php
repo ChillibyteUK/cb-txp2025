@@ -5,29 +5,47 @@
  * This file contains the footer section of the theme, including navigation menus,
  * office addresses, and colophon information.
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 defined( 'ABSPATH' ) || exit;
 ?>
 <div id="footer-top"></div>
-<footer class="footer">
+<footer class="footer py-4">
     <div class="container">
-        <div class="row py-5 g-3">
-            <div class="col-sm-9 d-flex justify-content-start">
-                <div class="text-center">Copyright &copy; <?= esc_html( gmdate( 'Y' ) ); ?> <a href="https://www.humannetworkgroup.com/" target="_blank">Human Network Ltd.</a><br>All rights reserved.</div>
+        <div class="row pb-5 g-3">
+            <div class="col-sm-3">
+                <div><strong>Registered Address</strong></div>
+                <?= wp_kses_post( get_field( 'contact_address', 'option' ) ); ?>
             </div>
-			<div class="col-sm-3 d-flex justify-content-end footer-social gap-3">
-				<a class="d-flex align-items-center justify-items-center" href="https://www.instagram.com/pbhagency/" rel="noopener noreferrer" target="_blank">
-					<i class="fa-brands fa-instagram"></i>
-				</a>
-				<a class="d-flex align-items-center justify-items-center" href="https://www.linkedin.com/company/powered-by-humans" rel="noopener noreferrer" target="_blank">
-					<i class="fa-brands fa-linkedin-in"></i>
-				</a>
-			</div>
+            <div class="col-sm-3">
+                <?=
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'footer_menu1',
+						'container_class' => 'footer__menu',
+					)
+				);
+				?>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-sm-end">
+                <div class="footer__logo">
+                    Technology<br><span class="text-primary-400">X</span> People
+                </div>
+            </div>
         </div>
-	</div>
+
+        <div class="colophon d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                &copy; <?= esc_html( gmdate( 'Y' ) ); ?> TxP.
+            </div>
+            <div>
+                <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
+                title="Digital Marketing by Chillibyte"></a>
+            </div>
+        </div>
 </footer>
+<div class="footer__after"></div>
 <?php wp_footer(); ?>
 </body>
 

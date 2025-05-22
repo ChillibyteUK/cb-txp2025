@@ -1,36 +1,108 @@
 /* Colour Classes */
-.has-white-background-color,
-.bg--white {
-	background-color: var(--col-pbh-white) !important;
+.has-light-background-color,
+.bg--light {
+	background-color: var(--col-light);
 }
-.has-white-color,
-.text-white {
-	color: var(--col-pbh-white) !important;
-}
-
-.has-black-background-color,
-.bg--black {
-	background-color: var(--col-pbh-black) !important;
-}
-.has-black-color,
-.text-black {
-	color: var(--col-pbh-black) !important;
+.has-light-color,
+.text-light {
+	color: var(--col-light);
 }
 
-.has-yellow-background-color,
-.bg--yellow {
-	background-color: var(--col-pbh-yellow) !important;
+.has-dark-background-color,
+.bg--dark {
+	background-color: var(--col-dark);
 }
-.has-yellow-color,
-.text-yellow {
-	color: var(--col-pbh-yellow) !important;
+.has-dark-color,
+.text-dark {
+	color: var(--col-dark);
 }
 
-.has-pink-background-color,
-.bg--pink {
-	background-color: var(--col-pbh-pink) !important;
+.has-dark-100-background-color,
+.bg--dark-100 {
+	background-color: var(--col-dark-100);
 }
-.has-pink-color,
-.text-pink {
-	color: var(--col-pbh-pink) !important;
+.has-dark-100-color,
+.text-dark-100 {
+	color: var(--col-dark-100);
+}
+
+.has-dark-200-background-color,
+.bg--dark-200 {
+	background-color: var(--col-dark-200);
+}
+.has-dark-200-color,
+.text-dark-200 {
+	color: var(--col-dark-200);
+}
+
+.has-dark-300-background-color,
+.bg--dark-300 {
+	background-color: var(--col-dark-300);
+}
+.has-dark-300-color,
+.text-dark-300 {
+	color: var(--col-dark-300);
+}
+
+.has-dark-400-background-color,
+.bg--dark-400 {
+	background-color: var(--col-dark-400);
+}
+.has-dark-400-color,
+.text-dark-400 {
+	color: var(--col-dark-400);
+}
+
+.has-dark-500-background-color,
+.bg--dark-500 {
+	background-color: var(--col-dark-500);
+}
+.has-dark-500-color,
+.text-dark-500 {
+	color: var(--col-dark-500);
+}
+
+.has-dark-600-background-color,
+.bg--dark-600 {
+	background-color: var(--col-dark-600);
+}
+.has-dark-600-color,
+.text-dark-600 {
+	color: var(--col-dark-600);
+}
+
+.has-dark-700-background-color,
+.bg--dark-700 {
+	background-color: var(--col-dark-700);
+}
+.has-dark-700-color,
+.text-dark-700 {
+	color: var(--col-dark-700);
+}
+
+.has-dark-800-background-color,
+.bg--dark-800 {
+	background-color: var(--col-dark-800);
+}
+.has-dark-800-color,
+.text-dark-800 {
+	color: var(--col-dark-800);
+}
+
+.has-dark-900-background-color,
+.bg--dark-900 {
+	background-color: var(--col-dark-900);
+}
+.has-dark-900-color,
+.text-dark-900 {
+	color: var(--col-dark-900);
+}
+
+.has-primary-400-background-color,
+.bg--primary-400 {
+	background-color: var(--col-primary-400);
+}
+.has-primary-400-color,
+.text-primary-400 {
+	color: var(--col-primary-400);
 }

@@ -6,26 +6,20 @@ $col-light: #f2f2f2;
 :root {
     /* === Colours === */
     --hsl-light: 0 0% 100%; // white
-    --col-pbh-white: hsl(var(--hsl-light));
+    --col-light: hsl(var(--hsl-light));
 
-    --hsl-dark: 0 0% 0%; // #1a1a1a
-    --col-pbh-black: hsl(var(--hsl-dark));
+    --hsl-dark: 0 0% 10%; // #1a1a1a
+    --col-dark: hsl(var(--hsl-dark));
 
-	// --col-grey-100: #f2f2f2;
-	// --col-grey-200: #e7e7e7;
-	// --col-grey-300: #d1d1d1;
-	// --col-grey-400: #bababa;
-	// --col-grey-500: #a4a4a4;
-	// --col-grey-600: #8d8d8d;
-	// --col-grey-700: #767676;
-	// --col-grey-800: #5f5f5f;
-	// --col-grey-900: #1a1a1a;
-
-    --col-pbh-yellow: #f6d14b;
-    --col-pbh-pink: #e6007e;
-    --col-pbh-green: #b9d536;
-    --col-pbh-blue: #59c5c0;
-    --col-pbh-blue-700: #419c98;
+	--col-grey-100: #f2f2f2;
+	--col-grey-200: #e7e7e7;
+	--col-grey-300: #d1d1d1;
+	--col-grey-400: #bababa;
+	--col-grey-500: #a4a4a4;
+	--col-grey-600: #8d8d8d;
+	--col-grey-700: #767676;
+	--col-grey-800: #5f5f5f;
+	--col-grey-900: #1a1a1a;
 
     --hsl-primary-400: 2 100% 67%; // #ff5c57
     --col-primary-400: hsl(var(--hsl-primary-400));
@@ -44,8 +38,8 @@ $col-light: #f2f2f2;
     --fs-200: 0.694rem;
 
     /* === Font Families === */
-    --ff-body: 'Futura', Tahoma, Geneva, Verdana, sans-serif;
-    --ff-heading: 'Futura', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-body: 'Aeonik Fono VF', Tahoma, Geneva, Verdana, sans-serif;
+    --ff-heading: 'Aeonik Fono VF', Tahoma, Geneva, Verdana, sans-serif;
 
     /* === Font Weights === */
 	--fw-300: 300; /* Light */
@@ -58,6 +52,6 @@ $col-light: #f2f2f2;
     /* === Utilities === */
     --transition: 250ms ease-out;
 
-    --h-top: 86px;
+    --h-top: 90px;
 
 }

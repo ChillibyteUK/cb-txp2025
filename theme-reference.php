@@ -5,7 +5,7 @@
  * A visual reference page for theme colours, typography, buttons,
  * grid layout, blocks, and utility classes.
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

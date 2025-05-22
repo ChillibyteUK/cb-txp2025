@@ -2,7 +2,7 @@
 /**
  * Template Name: No Nav
  *
- * @package cb-pbh2025
+ * @package cb-txp2025
  */
 
 // Exit if accessed directly.
